@@ -1,0 +1,349 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<!DOCTYPE struts-config PUBLIC
+          "-//Apache Software Foundation//DTD Struts Configuration 1.2//EN"
+          "http://jakarta.apache.org/struts/dtds/struts-config_1_2.dtd">
+
+
+<struts-config>
+    <form-beans>
+        <form-bean name="userForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">
+				<form-property name="userId"  type="java.lang.String" /> 
+				<form-property name="firstName"  type="java.lang.String" /> 
+				<form-property name="lastName"  type="java.lang.String" /> 				
+				<form-property name="passWord"  type="java.lang.String" />
+				<form-property name="emailID"  type="java.lang.String" />
+				<form-property name="newPassWord" type="java.lang.String"/>
+				<form-property name="userConfigList" type="java.util.ArrayList"/>
+		</form-bean>
+	    <form-bean name="loginForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">
+				<form-property name="userName"  type="java.lang.String" /> 
+				<form-property name="passWord"  type="java.lang.String" />
+				<form-property name="dbConfigList" type="java.util.ArrayList"/>
+				<form-property name="newPassWord"  type="java.lang.String" />
+				<form-property name="oldPassWord"  type="java.lang.String" />
+				<form-property name="userId"  type="java.lang.String" />
+		</form-bean>
+		<form-bean name="dbConfigForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">
+		    	<form-property name="dbName"  type="java.lang.String" /> 
+				<form-property name="serverName"  type="java.lang.String" /> 
+				<form-property name="portNumber"  type="java.lang.String" />	
+				<form-property name="sid"  type="java.lang.String" /> 
+				<form-property name="userName"  type="java.lang.String" />	
+				<form-property name="passWord"  type="java.lang.String" />		
+				<form-property name="dbConfigList" type="java.util.ArrayList"/>
+				<form-property name="removeConfig" type="java.lang.String"/>		 
+				<form-property name="isSelected" type="java.lang.Boolean"/> 
+				<form-property name="selectAll"  type="java.lang.Boolean" />		
+		</form-bean>
+		<form-bean name="compareDBForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">
+				<form-property name="dbObjViewList" type="java.util.ArrayList"/>		
+				<form-property name="dbNameList" type="java.util.ArrayList"/>
+				<form-property name="dbConfigMap" type="java.util.HashMap"/>
+				<form-property name="selectedDbList" type="java.util.ArrayList"/>	
+				<form-property name="dbName" type="java.lang.String"/> 
+				<form-property name="selectedDb" type="java.lang.String"/>
+				<form-property name="compareType" type="java.lang.String"/> 
+				<form-property name="isSelected" type="java.lang.Boolean"/> 
+				<form-property name="selectAll"  type="java.lang.Boolean" />
+				<form-property name="slctdDbObj" type="java.lang.String"/>
+				<form-property name="colorFlag" type="java.lang.String"/>
+				<form-property name="tableName" type="java.lang.String"/>
+				<form-property name="dbObjTblNameList" type="java.util.ArrayList"/>	
+				<form-property name="dbFieldsList" type="java.util.ArrayList"/>
+				<form-property name="structCompType" type="java.lang.String"/>	
+				<form-property name="excelModel" type="com.hp.dbpowerpack.common.model.ExcelModel"/>					
+				<form-property name="to" type="java.lang.String"/>
+				<form-property name="cc" type="java.lang.String"/>
+				<form-property name="subject" type="java.lang.String"/> 				
+				<form-property name="bodyContent" type="java.lang.String"/>
+				<form-property name="actionName" type="java.lang.String"/>  
+				<form-property name="dbMap" type="java.util.HashMap"/>	
+				<form-property name="tableName1" type="java.lang.String"/>  
+				<form-property name="tableName2" type="java.lang.String"/>  
+				<form-property name="ObjectType" type="java.lang.String"/>
+				<form-property name="combinedLst" type="java.util.ArrayList"/>  							
+		</form-bean>
+		<form-bean name="healthCheckForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">		
+				<form-property name="dbNameList" type="java.util.ArrayList"/>
+				<form-property name="dbName" type="java.lang.String"/>
+				<form-property name="tableSpaceDtlList" type="java.util.ArrayList"/> 
+				<form-property name="displayFlag" type="java.lang.String"/>
+				<form-property name="blockContentionList" type="java.util.ArrayList"/> 
+				<form-property name="partitionedTableList" type="java.util.ArrayList"/> 
+				<form-property name="availableJobsList" type="java.util.ArrayList"/>
+				<form-property name="jobsBrokenList" type="java.util.ArrayList"/>
+				<form-property name="jobsRunningList" type="java.util.ArrayList"/>
+				<form-property name="excelModel" type="com.hp.dbpowerpack.common.model.ExcelModel"/>					
+				<form-property name="to" type="java.lang.String"/>
+				<form-property name="cc" type="java.lang.String"/>
+				<form-property name="subject" type="java.lang.String"/> 				
+				<form-property name="bodyContent" type="java.lang.String"/>
+				<form-property name="actionName" type="java.lang.String"/>  			
+		</form-bean>
+		<form-bean name="validateObjectForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">		
+				<form-property name="dbNameList" type="java.util.ArrayList"/>
+				<form-property name="dbName" type="java.lang.String"/>
+				<form-property name="invalidObjList" type="java.util.ArrayList"/> 
+				<form-property name="procedureStartsWith" type="java.lang.String"/>
+				<form-property name="functionStartsWith" type="java.lang.String"/>
+				<form-property name="packageStartsWith" type="java.lang.String"/>
+				<form-property name="tableStartsWith" type="java.lang.String"/>
+				<form-property name="viewStartsWith" type="java.lang.String"/>
+				<form-property name="sequenceStartsWith" type="java.lang.String"/>
+				<form-property name="triggerStartsWith" type="java.lang.String"/>
+				<form-property name="typeStartsWith" type="java.lang.String"/>
+				<form-property name="mviewStartsWith" type="java.lang.String"/>
+				<form-property name="dbLinkStartsWith" type="java.lang.String"/>
+				<form-property name="isExist"  type="java.lang.Boolean" />
+				<form-property name="requestType" type="java.lang.String"/>
+				<form-property name="poorReadabilityList" type="java.util.ArrayList"/> 
+				<form-property name="rollBackCheckList" type="java.util.ArrayList"/>
+				<form-property name="namingStandardChkList" type="java.util.ArrayList"/> 
+				<form-property name="poorVersionMngmntLst" type="java.util.ArrayList"/> 
+				<form-property name="excelModel" type="com.hp.dbpowerpack.common.model.ExcelModel"/>					
+				<form-property name="to" type="java.lang.String"/>
+				<form-property name="cc" type="java.lang.String"/>
+				<form-property name="subject" type="java.lang.String"/> 				
+				<form-property name="bodyContent" type="java.lang.String"/>
+				<form-property name="actionName" type="java.lang.String"/>  
+				<form-property name="selectAll"  type="java.lang.Boolean" />
+				<form-property name="slctdDbObj" type="java.lang.String"/>		
+				<form-property name="isSelected" type="java.lang.Boolean"/>
+				<form-property name="length" type="java.lang.String"/>	 	 				
+		</form-bean>
+		<form-bean name="mailForm" dynamic="true" type="org.apache.struts.action.DynaActionForm">		
+				<form-property name="to" type="java.lang.String"/>
+				<form-property name="cc" type="java.lang.String"/>
+				<form-property name="subject" type="java.lang.String"/> 				
+				<form-property name="bodyContent" type="java.lang.String"/> 				
+				<form-property name="fileAttached" type="java.io.File"/> 
+				<form-property name="excelModel" type="com.hp.dbpowerpack.common.model.ExcelModel"/>
+				<form-property name="dbObjTblNameList" type="java.util.ArrayList"/>	
+		</form-bean>
+    </form-beans>
+    
+    
+    
+    <global-exceptions>
+    
+    </global-exceptions>
+
+    <global-forwards>
+        <forward name="home"  path="/LogIn.do"/>
+    </global-forwards>
+
+    <action-mappings>
+        <action path="/login" parameter="init" name="loginForm" type="com.hp.dbpowerpack.action.LoginAction">
+            <forward name="login" path="login"/>
+        </action>
+        <action path="/logOutAction" parameter="logOut" name="loginForm" type="com.hp.dbpowerpack.action.LoginAction">
+            <forward name="success" path="/login.do"/>
+        </action>
+        <action path="/loginAction" parameter="login" name="loginForm" type="com.hp.dbpowerpack.action.LoginAction">
+            <forward name="success" path="home"/>
+            <forward name="fail" path="/login.do"/>
+        </action>
+        <action path="/loadHome" parameter="loadHome" name="loginForm" type="com.hp.dbpowerpack.action.LoginAction">
+            <forward name="success" path="home"/>
+        </action>        
+        <action path="/addDBConfig" parameter="addDBConfig" name="dbConfigForm" type="com.hp.dbpowerpack.action.DBConfigAction">
+            <forward name="success" path="/viewDBConfig.do"/>
+            <forward name="error" path="viewdbConfig"/>
+        </action>
+        <action path="/addConfig" parameter="addConfig" name="dbConfigForm" type="com.hp.dbpowerpack.action.DBConfigAction">
+            <forward name="success" path="addDbConfig"/>
+        </action>
+         <action path="/removeDBConfig" parameter="removeDBConfig" name="dbConfigForm" type="com.hp.dbpowerpack.action.DBConfigAction">
+            <forward name="success" path="/viewDBConfig.do"/>
+            <forward name="error" path="viewdbConfig"/>
+        </action>
+         <action path="/viewDBConfig" parameter="viewDBConfig" name="dbConfigForm" type="com.hp.dbpowerpack.action.DBConfigAction">
+            <forward name="success" path="viewdbConfig"/>
+        </action>
+         <action path="/compareDB" parameter="init" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="compare"/>
+        </action>
+        <action path="/loadCompareDB" parameter="load" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="compare"/>
+        </action>
+         <action path="/versionCompare" parameter="compareVersion" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewCompare"/>
+        </action>
+          <action path="/tableCompare" parameter="compareTableStruct" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewTableCompare"/>
+        </action>
+          <action path="/ObjectContentCompare" parameter="objectContentCompareLoad" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="longRunning"/>
+        </action>
+         <action path="/ObjectContentResult" parameter="objectContentCompare" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewCompCode"/>
+        </action>
+         <action path="/ObjectContCompRslt" parameter="objectContCompRslt" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewCompCode"/>
+        </action>
+     
+        
+         <action path="/viewFieldComparison" parameter="compareFieldsStruct" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewFieldsCompare"/>
+        </action>
+         <action path="/viewCodeComparison" parameter="viewCodeComparison" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewCodeComparison"/>
+        </action>
+        <action path="/ObjectCompare" parameter="compareObject" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewTableCompare"/>
+        </action>
+        <action path="/userConfig" parameter="userConfig" name="userForm" type="com.hp.dbpowerpack.action.UserAction">
+            <forward name="success" path="register"/>
+        </action>
+        <action path="/addUserAction" parameter="addUser" name="userForm" type="com.hp.dbpowerpack.action.UserAction">
+            <forward name="success" path="register"/>
+        </action>
+        <action path="/addUserConfig" parameter="addUserConfig" name="userForm" type="com.hp.dbpowerpack.action.UserAction">
+            <forward name="success" path="addUser"/>
+        </action>
+        
+         <action path="/compTableExcelReport" parameter="compareTableExcel" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="success" path="viewCompTblDtlExcel"/>
+        </action>
+        
+        <action path="/sendMailAction" parameter="sendMail" name="compareDBForm" type="com.hp.dbpowerpack.action.CompareDBAction">
+            <forward name="viewTableCompare" path="viewTableCompare"/>
+            <forward name="viewFieldsCompare" path="viewFieldsCompare"/>
+            <forward name="viewCompare" path="viewCompare"/>
+        </action>
+        
+         <action path="/loadMailAction" parameter="loadMail" name="mailForm" type="com.hp.dbpowerpack.common.action.MailAction">
+            <forward name="success" path="mail"/>
+        </action>
+        
+        <action path="/loadChangePassword" parameter="loadChangePassword" name="loginForm" type="com.hp.dbpowerpack.action.LoginAction">
+            <forward name="success" path="changePassword"/>
+        </action>
+        <action path="/changePassword" parameter="changePassword" name="loginForm" type="com.hp.dbpowerpack.action.LoginAction">
+            <forward name="success" path="/login.do"/>
+        </action>
+        
+         <action path="/invalidObjAction" parameter="invalidObjAction" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="validateObjectResult"/>
+        </action>
+        <action path="/validateObjConfig" parameter="loadValidateObjConfig" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="configureNamingStandard"/>
+        </action>
+        <action path="/saveValidateObjConfig" parameter="saveValidateObjConfig" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="configureNamingStandard"/>
+        </action>
+        <action path="/loadValidateNamingStandard" parameter="loadValidateNamingStandard" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="validateNamingStandard"/>
+        </action>
+        <action path="/validateNamingStandard" parameter="validateNamingStandard" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="validateNamingStandard"/>
+        </action>
+        <action path="/poorReadability" parameter="poorReadability" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="codingViolation"/>
+        </action>
+        <action path="/poorReadabilityResults" parameter="poorReadabilityResults" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="codingViolation"/>
+        </action>
+        <action path="/rollbackCheck" parameter="rollbackCheck" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="validateObjectResult"/>
+        </action>
+         <action path="/poorVersionManagement" parameter="poorVersionManagement" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="validateObjectResult"/>
+        </action>
+         <action path="/validateObjExcelReport" parameter="excelReport" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="viewCompTblDtlExcel"/>
+        </action>
+        
+        <action path="/validateObjsendMailAction" parameter="sendMail" name="validateObjectForm" type="com.hp.dbpowerpack.action.ValidateObjectsAction">
+            <forward name="success" path="validateObjectResult"/>
+        </action>
+        
+         <action path="/healthCheck" parameter="init" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="healthCheck"/>
+        </action>
+          <action path="/validateObject" parameter="init" name="validateObjectForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="validateObject"/>
+        </action>
+        
+        <action path="/checkTableSpace" parameter="checkTableSpace" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="viewTableSpace"/>
+        </action>
+        <action path="/blockContention" parameter="blockContention" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="healthCheckResult"/>
+        </action>
+        <action path="/availableJobs" parameter="availableJobs" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="healthCheckResult"/>
+        </action>
+        <action path="/jobsBroken" parameter="jobsBroken" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="healthCheckResult"/>
+        </action>
+        <action path="/jobsRunning" parameter="jobsRunning" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="healthCheckResult"/>
+        </action>
+        
+        <action path="/partitionedTable" parameter="partitionedTable" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="healthCheckResult"/>
+        </action>
+        
+        
+         <action path="/healthChkExcelReport" parameter="excelReport" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="success" path="viewCompTblDtlExcel"/>
+        </action>
+        
+        <action path="/healthChksendMailAction" parameter="sendMail" name="healthCheckForm" type="com.hp.dbpowerpack.action.HealthCheckAction">
+            <forward name="viewTableSpace" path="viewTableSpace"/>
+            <forward name="healthCheckResult" path="healthCheckResult"/>
+        </action>
+    </action-mappings>
+    
+    
+    <controller processorClass="org.apache.struts.action.RequestProcessor" maxFileSize="3M"/>           
+    
+    <message-resources parameter="properties/ApplicationResource"/>
+    
+    <!-- ========================= Tiles plugin ===============================-->
+    <!--
+    This plugin initialize Tiles definition factory. This later can takes some
+    parameters explained here after. The plugin first read parameters from
+    web.xml, thenoverload them with parameters defined here. All parameters
+    are optional.
+    The plugin should be declared in each struts-config file.
+    - definitions-config: (optional)
+    Specify configuration file names. There can be several comma
+    separated file names (default: ?? )
+    - moduleAware: (optional - struts1.1)
+    Specify if the Tiles definition factory is module aware. If true
+    (default), there will be one factory for each Struts module.
+    If false, there will be one common factory for all module. In this
+    later case, it is still needed to declare one plugin per module.
+    The factory will be initialized with parameters found in the first
+    initialized plugin (generally the one associated with the default
+    module).
+    true : One factory per module. (default)
+    false : one single shared factory for all modules
+    - definitions-parser-validate: (optional)
+    Specify if xml parser should validate the Tiles configuration file.
+    true : validate. DTD should be specified in file header (default)
+    false : no validation
+
+    Paths found in Tiles definitions are relative to the main context.
+    -->
+    <plug-in className="org.apache.struts.tiles.TilesPlugin" >
+        <set-property property="definitions-config" value="/WEB-INF/tiles-defs.xml" />      
+        <set-property property="moduleAware" value="true" />
+    </plug-in>
+    
+    <!-- ========================= Validator plugin ================================= -->
+    <plug-in className="org.apache.struts.validator.ValidatorPlugIn">
+        <set-property
+            property="pathnames"
+            value="/WEB-INF/validator-rules.xml,/WEB-INF/validation.xml"/>
+    </plug-in>
+
+     <!-- Spring Struts plugin -->
+ 	<plug-in className="org.springframework.web.struts.ContextLoaderPlugIn">
+		<set-property property="contextConfigLocation"
+			value="/WEB-INF/SpringBeans.xml" />
+  	</plug-in>
+</struts-config>

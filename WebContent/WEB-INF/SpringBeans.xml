@@ -1,0 +1,40 @@
+<beans xmlns="http://www.springframework.org/schema/beans"
+xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans-2.5.xsd">
+ 
+	<!-- Beans Declaration -->
+	<bean id="userDao" class="com.hp.dbpowerpack.dao.UserDAO" />
+	<bean id="dbConfigDetailsDAO" class="com.hp.dbpowerpack.dao.DBConfigDetailsDAO" />
+	<bean id="namingConventionDAO" class="com.hp.dbpowerpack.dao.NamingConventionDAO" />
+	<bean id="mailService" class="com.hp.dbpowerpack.service.MailService" />
+	
+	
+	<bean id="dbPPConnection" class="com.hp.dbpowerpack.common.dao.DBPPConnection" />
+	<bean id="dbPPTransactionManager" class="com.hp.dbpowerpack.common.dao.DBPPTransactionManager" >
+	    <property  name="dbPPConnection" ref="dbPPConnection" ></property>
+   	</bean>
+   	 
+	<bean id="userDetailsService" class="com.hp.dbpowerpack.service.UserDetailsService">
+	    <property  name="userDao" ref="userDao" ></property>
+   	</bean>
+	
+	<bean id="dbConfigDetailsService" class="com.hp.dbpowerpack.service.DBConfigDetailsService">
+	    <property  name="dbConfigDetailsDAO" ref="dbConfigDetailsDAO" ></property>
+   	</bean>
+   	 
+	<bean id="compareDBService" class="com.hp.dbpowerpack.service.CompareDBService">
+	    <property  name="transactionManager" ref="dbPPTransactionManager" ></property>
+	    <property  name="dbConfigDetailsService" ref="dbConfigDetailsService" ></property>
+   	</bean>
+   	
+	<bean id="healthCheckService" class="com.hp.dbpowerpack.service.HealthCheckService">
+	    <property  name="transactionManager" ref="dbPPTransactionManager" ></property>
+   	</bean>
+   	
+	<bean id="validateObjectService" class="com.hp.dbpowerpack.service.ValidateObjectService">
+	    <property  name="transactionManager" ref="dbPPTransactionManager" ></property>
+	    <property  name="namingConventionDAO" ref="namingConventionDAO" ></property>
+   	</bean>
+   	
+</beans>

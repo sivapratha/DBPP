@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+ <!DOCTYPE tiles-definitions PUBLIC
+       "-//Apache Software Foundation//DTD Tiles Configuration 1.1//EN"
+       "http://jakarta.apache.org/struts/dtds/tiles-config_1_1.dtd">
+
+
+<!--
+     This is a blank Tiles definition file with a commented example.
+-->
+
+<tiles-definitions>
+
+    <!-- sample tiles definitions
+    <definition name=".mainLayout" path="/common/layouts/classicLayout.jsp">
+        <put name="title"  value="Sample Page Title" />
+        <put name="header" value="/common/header.jsp" />
+        <put name="menu"   value=".mainMenu" />
+        <put name="footer" value="/common/footer.jsp" />
+        <put name="body"   value=".portal.body" />
+    </definition>
+
+    <definition name=".mainMenu" path="/common/layouts/vboxLayout.jsp" >
+        <putList name="list" >
+            <add value=".menu.links" />
+            <add value=".menu.taglib.references" />
+            <add value=".menu.printer.friendly" />
+            <add value=".menu.old.documents" />
+      </putList>
+    </definition>
+
+    <definition name="aPage" extends=".mainLayout">
+        <put name="title"  value="Another Title" />
+        <put name="body"   value=".aPage.body" />
+    </definition>
+
+    end samples -->
+
+<definition name="${YOUR_DEFINITION_HERE}"></definition>
+    <definition name="mainLayout" path="/pages/mainLayout.jsp">
+        <put name="title"  value="DB Power Pack" />
+        <put name="header" value="/pages/logInheader.jsp" />
+        <put name="body"   value="/pages/body.jsp" />
+        <put name="footer" value="/pages/footer.jsp" />        
+    </definition>
+    <definition name="baseLayout" path="/pages/baseLayout.jsp">
+        <put name="title"  value="DB Power Pack" />
+        <put name="header" value="/pages/header.jsp" />
+        <put name="menu"   value="/pages/menu.jsp" />
+        <put name="body"   value="/pages/body.jsp" />
+        <put name="footer" value="/pages/footer.jsp" />        
+    </definition>
+    
+    <definition name="login" extends="mainLayout">
+        <put name="title" value="DB Power Pack LogIn" />
+        <put name="body" value="/pages/login.jsp" />
+    </definition>
+    <definition name="home" extends="baseLayout">
+        <put name="title" value="DB Power Pack Home" />
+        <put name="body" value="/pages/Home.jsp" />
+    </definition>
+    <definition name="viewdbConfig" extends="baseLayout">
+        <put name="title" value="DB Power Pack DB Configuration" />
+        <put name="body" value="/pages/viewDBConfigDetails.jsp" />
+    </definition>
+      <definition name="compare" extends="baseLayout">
+        <put name="title" value="DB Power Pack DB Configuration" />
+        <put name="body" value="/pages/compareDB.jsp" />
+    </definition>
+      <definition name="viewCompare" extends="baseLayout">
+        <put name="title" value="DB Power Pack DB Version Compare" />
+        <put name="body" value="/pages/viewCompareDetails.jsp" />
+    </definition>
+    <definition name="viewTableCompare" extends="baseLayout">
+        <put name="title" value="DB Power Pack DB Table Compare" />
+        <put name="body" value="/pages/viewCompTblDetails.jsp" />
+    </definition>
+     <definition name="register" extends="baseLayout">
+        <put name="title" value="DBPP Register user" />
+        <put name="body" value="/pages/userConfigDetails.jsp" />
+    </definition>
+     <definition name="healthCheck" extends="baseLayout">
+        <put name="title" value="DBPP Health Check" />
+        <put name="body" value="/pages/healthCheck.jsp" />
+    </definition>
+    <definition name="validateObject" extends="baseLayout">
+        <put name="title" value="DBPP Health Check" />
+        <put name="body" value="/pages/validateObject.jsp" />
+    </definition>
+    <definition name="longRunning" extends="baseLayout">
+        <put name="title" value="DBPP Health Check" />
+        <put name="body" value="/pages/longRunning.jsp" />
+    </definition>
+     <definition name="viewCompCode" extends="baseLayout">
+        <put name="title" value="DB Power Pack DB Code Compare" />
+        <put name="body" value="/pages/viewCompCode.jsp" />
+    </definition>
+    
+     <definition name="addUser" path="/pages/RegisterUser.jsp" />
+    
+     <definition name="validateObjectResult" path="/pages/validateObjectResult.jsp" />
+     <definition name="viewTableSpace" path="/pages/ViewTableSpace.jsp" />
+     <definition name="healthCheckResult" path="/pages/healthCheckResult.jsp" />
+     <definition name="viewCompTblDtlExcel" path="/pages/viewCompTblDtlExcel.jsp" />
+    
+     <definition name="viewFieldsCompare" path="/pages/viewCompFieldDetails.jsp" />
+     <definition name="addDbConfig" path="/pages/addDBConfigDetails.jsp" />
+     <definition name="mail" path="/pages/mail.jsp" />
+     <definition name="configureNamingStandard" path="/pages/configureNamingStandard.jsp" />
+     <definition name="changePassword" path="/pages/changePassword.jsp" />
+      <definition name="validateNamingStandard" path="/pages/validateNamingStandard.jsp" />
+      <definition name="viewCodeComparison" path="/pages/viewCodeComparison.jsp" />
+      <definition name="codingViolation" path="/pages/codingViolation.jsp" />
+     
+</tiles-definitions>
